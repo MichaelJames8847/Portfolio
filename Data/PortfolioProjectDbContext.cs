@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using PortfolioProject.Models;
 
-public class PortfolioContext : DbContext
+namespace PortfolioProject.Data;
+public class PortfolioProjectDbContext : DbContext
 {
     private readonly IConfiguration _config;
 
-    public PortfolioContext(DbContextOptions<PortfolioContext> options, IConfiguration config)
+    public PortfolioProjectDbContext(DbContextOptions<PortfolioProjectDbContext> options, IConfiguration config)
         :base (options)
         {
             _config = config;
@@ -45,7 +46,7 @@ public class PortfolioContext : DbContext
             Id = 1,
             Title = "Blog test",
             Content = "Blog content",
-            PostDate = DateTime.UtcNow,
+            PostDate = DateTime.SpecifyKind(DateTime.Parse("2023-11-08"), DateTimeKind.Utc),
             Image = "null"
         });
 
@@ -91,8 +92,8 @@ public class PortfolioContext : DbContext
                 the greatest fictional battles of all time! Pit some of your
                 favorite characters from multiple universes against each other 
                 and determine who's finally the strongest amongst them all!",
-                StartDate = DateTime.Parse("2023-07-03"),
-                EndDate = DateTime.Parse("2023-07-12"),
+                StartDate = DateTime.SpecifyKind(DateTime.Parse("2023-07-03"), DateTimeKind.Utc),
+                EndDate = DateTime.SpecifyKind(DateTime.Parse("2023-07-12"), DateTimeKind.Utc),
                 Link = "https://github.com/MichaelJames8847/Omni-Arena-Capstone.git",
                 Image = "https://i.kym-cdn.com/photos/images/newsfeed/000/993/683/3bc.jpg",
                 ProjectStatus = "Complete"
@@ -107,8 +108,8 @@ public class PortfolioContext : DbContext
                 prefered genres and preferences, and watch the magic unfurl
                 as some of the most popular games in history are recommended for your
                 pleasure!",
-                StartDate = DateTime.Parse("2023-10-16"),
-                EndDate = DateTime.Parse("2023-11-1"),
+                StartDate = DateTime.SpecifyKind(DateTime.Parse("2023-10-19"), DateTimeKind.Utc),
+                EndDate = DateTime.SpecifyKind(DateTime.Parse("2023-11-1"), DateTimeKind.Utc),
                 Link = "https://github.com/MichaelJames8847/DigitalDungeon.git",
                 Image = "https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2021/04/23044226/Gaming-Lounge-1024x554.jpg",
                 ProjectStatus = "Complete"
@@ -126,9 +127,9 @@ public class PortfolioContext : DbContext
             new Skill
             { Id = 4, Name = "Critical Thinking"},
             new Skill
-            { Id = 4, Name = "Project Management"},
+            { Id = 5, Name = "Project Management"},
             new Skill
-            { Id = 5, Name = "Version Control (Git)"}
+            { Id = 6, Name = "Version Control (Git)"}
         });
 
         modelBuilder.Entity<Technology>().HasData(new Technology[]

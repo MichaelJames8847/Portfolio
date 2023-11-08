@@ -1,3 +1,8 @@
 {
-    "editor.hover.enabled": true
+    "editor.hover.enabled": true,
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1E168A",
+        "titleBar.activeBackground": "#2A1FC1",
+        "titleBar.activeForeground": "#FDFDFF"
+    }
 }

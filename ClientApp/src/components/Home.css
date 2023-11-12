@@ -1,0 +1,91 @@
+.home {
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.hero-section {
+  background-color: #282c34;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero-headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.about-me-section {
+  background-color: #f8f9fa;
+  padding: 40px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.about-me-section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-me-section p {
+  font-size: 1.2rem;
+}
+
+.tech-stack {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.tech-stack h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.tech-item {
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  background-color: #e9ecef;
+  padding: 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.contact-info a {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #0056b3;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}

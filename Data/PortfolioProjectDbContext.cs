@@ -34,7 +34,27 @@ public class PortfolioProjectDbContext : DbContext
             FirstName = "Michael",
             LastName = "James",
             ProfilePic = "https://avatars.githubusercontent.com/u/133455651?v=4",
-            Bio = "A Short Bio",
+            Bio = @"Former Executive Chef turned Full Stack Web Developer. My journey in the culinary worl
+            spanned 15 years, starting as a humble dishwasher and culminating in a leadership role at 
+            BJ's Restaurant and Brewhouse, of where I housed 8 years of my professional work life.
+            This path taught me the essence of hard work, teamwork, and the art of managing high-pressure situations.
+            
+            In May 2023, I embarkned on a new adventure, driven by my passion for technology and problem-solving.
+            I joined the Full Time, Full Stack Web Development Cohort-65 at Nashville Software School(NSS), where I
+            honed my skills in Javascript(JS), React.js, C#, ASP.NET, and so many more. This intensive program not only
+            equipped me with technical skills, but also deepened my ability to think logically and creatively.
+            
+            Beyond coding and cooking, I'm an avid gamer and a musician at heart. You'll often find me lost in the
+            world of games or expressing myself through the strings of a guitar, the beats of drums, or belting away
+            in the microphone. This blend of creativity and technical acumen is what I bring to the world of
+            web development.
+            
+            As I transition into this exciting industry, I'm eagerly seeking opportunities to contribute, grow,
+            and collaborate. I am passionate about creating impactful, user-friendly applications and am constantly
+            exploring new technologies and apporaches to enhance my skills.
+            
+            Thank you for visiting my portfolio. Dive in to see the projects that showcase my journey from kitchens to code,
+            and feel free to reach out if you think my skills and passions align with your needs.",
             Email = "jmj6ggggg@gmail.com",
             PhoneNumber = "615-971-9745",
             LinkedIn = "https://www.linkedin.com/in/michaeljames8847/",

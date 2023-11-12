@@ -1,3 +1,5 @@
+import Projects from "./project/Projects";
+import Blogs from "./blog/Blog";
 import { Home } from "./components/Home";
 import UserProfileView from "./user/UserProfile";
 
@@ -7,12 +9,16 @@ const AppRoutes = [
     element: <Home />
   },
   {
-    path: '/userprofile',
+    path: '/about',
     element: <UserProfileView />
   },
   {
     path: '/blog',
-    element: <FetchData />
+    element: <Blogs />
+  },
+  {
+    path: '/project',
+    element: <Projects />
   }
 ];
 

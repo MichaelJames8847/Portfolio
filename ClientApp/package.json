@@ -1,5 +1,6 @@
 {
   "name": "portfolioproject",
+  "proxy": "https://localhost:7153",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

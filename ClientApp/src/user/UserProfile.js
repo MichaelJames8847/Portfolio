@@ -1,53 +1,36 @@
-import { useEffect, useState } from "react";
-import { Table } from "reactstrap";
+import React, { useEffect, useState } from "react";
+import { Card, CardBody, Container, Row, Col, Media } from "reactstrap";
 import { getUserProfile } from "../managers/UserProfileManager";
-
+import "./UserProfile.css";
 
 export default function UserProfileView() {
-    const [userProfile, setUserProfile] = useState([]);
+    const [userProfile, setUserProfile] = useState(null);
 
     useEffect(() => {
-        getUserProfile().then(setUserProfile)
-    }, [])
+        getUserProfile().then(data => setUserProfile(data[0]));
+    }, []);
 
     return (
-        <div className="user-profile-view">
-            <Table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Profile Pic</th>
-                        <th>Bio</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>LinkedIn</th>
-                        <th>GitHub</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {userProfile.map((up) => (
-                        <tr key={up.id}>
-                            <td>{`${up.firstName} ${up.lastName}`}</td>
-                            <td>
-                                <img src={up.profilePic} alt="Profile" />
-                            </td>
-                            <td>{up.bio}</td>
-                            <td>{up.email}</td>
-                            <td>{up.phoneNumber}</td>
-                            <td>
-                                <a href={up.linkedIn} target="_blank" rel="noopener noreferrer">
-                                    LinkedIn
-                                </a>
-                            </td>
-                            <td>
-                                <a href={up.github} target="_blank" rel="noopener noreferrer">
-                                    GitHub
-                                </a>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
-        </div>
+        <Container className="user-profile-view py-5">
+            {userProfile && (
+                <Row>
+                    <Col md={4} className="text-center">
+                        <Media object src={userProfile.profilePic} alt="Profile Picture" className="profile-pic" />
+                    </Col>
+                    <Col md={8}>
+                        <Card className="profile-card">
+                            <CardBody>
+                                <h1 className="profile-name">{`${userProfile.firstName} ${userProfile.lastName}`}</h1>
+                                <p className="profile-bio">{userProfile.bio}</p>
+                                <p className="profile-detail">Email: {userProfile.email}</p>
+                                <p className="profile-detail">Phone: {userProfile.phoneNumber}</p>
+                                <p className="profile-detail">LinkedIn: <a href={userProfile.linkedIn} target="_blank" rel="noopener noreferrer">{userProfile.linkedIn}</a></p>
+                                <p className="profile-detail">GitHub: <a href={userProfile.github} target="_blank" rel="noopener noreferrer">{userProfile.github}</a></p>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            )}
+        </Container>
     );
 }

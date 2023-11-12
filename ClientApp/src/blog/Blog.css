@@ -1,0 +1,30 @@
+.blog-container {
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 8px; /* Rounded corners for container */
+    padding: 30px; /* Padding around the blog cards */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
+}
+
+.blog-card {
+    border-radius: 8px; /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Shadow for cards */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px); /* Slight raise effect on hover */
+}
+
+.blog-card-title {
+    font-size: 1.25rem; /* Title font size */
+    color: #007bff; /* Title color */
+}
+
+.blog-card-text {
+    font-size: 1rem; /* Body text font size */
+    color: #333; /* Body text color */
+}
+
+.text-muted {
+    font-size: 0.85rem; /* Smaller font size for date */
+}

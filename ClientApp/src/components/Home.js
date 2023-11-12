@@ -1,26 +1,66 @@
-import React, { Component } from 'react';
+// Home.js
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Row, Col } from 'reactstrap';
+import './Home.css'; // Import your CSS file
+import { getUserProfile } from '../managers/UserProfileManager';
+import { getTechnologies } from '../managers/technologyManager';
 
-export class Home extends Component {
-  static displayName = Home.name;
+export function Home() {
+    const [technologies, setTechnologies] = useState([]);
+    const [user, setUser] = useState({});
 
-  render() {
+    useEffect(() => {
+        // Assuming getUserProfile() and getTechnologies() return data correctly
+        // Update these calls as necessary
+        getUserProfile().then(data => setUser(data[0]));
+        getTechnologies().then(setTechnologies);
+    }, []);
+
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
+        <Container fluid className="home">
+            {/* Hero Section */}
+            <Row className="hero-section">
+                <Col className="text-center">
+                    <img src={user.profilePic} alt="Michael James" className="hero-headshot" />
+                    <h1>Michael James: Software Engineer</h1>
+                    <p>Transforming Ideas into Digital Solutions</p>
+                    <Link to="/project" className="btn btn-primary">View My Work!</Link>
+                </Col>
+            </Row>
+
+            {/* About Me Section */}
+            <Row className="about-me-section">
+                <Col>
+                    <h2>Gamer, Coder, Chef</h2>
+                    <p>A unique blend of creativity, culinary arts, and coding.</p>
+                </Col>
+            </Row>
+
+            {/* Tech Stack */}
+            <Row className="tech-stack">
+                <Col>
+                    <h2>Tech Stack</h2>
+                    <Row>
+                        {technologies.map((tech, index) => (
+                            <Col key={index} md={4} className="tech-item">
+                                {/* Replace with actual technology icons or names */}
+                                <p>{tech.technologyName}</p>
+                            </Col>
+                        ))}
+                    </Row>
+                </Col>
+            </Row>
+
+            {/* Contact Information */}
+            <Row className="contact-info">
+                <Col className="text-center">
+                    <p>Email: {user.email}</p>
+                    <p>Phone: {user.phoneNumber}</p>
+                    <p>LinkedIn: <a href={user.linkedIn}>LinkedIn</a></p>
+                    <p>GitHub: <a href={user.github}>GitHub</a></p>
+                </Col>
+            </Row>
+        </Container>
     );
-  }
 }

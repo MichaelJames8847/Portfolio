@@ -7,10 +7,10 @@ public class PortfolioProjectDbContext : DbContext
     private readonly IConfiguration _config;
 
     public PortfolioProjectDbContext(DbContextOptions<PortfolioProjectDbContext> options, IConfiguration config)
-        :base (options)
-        {
-            _config = config;
-        }
+        : base(options)
+    {
+        _config = config;
+    }
 
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<BlogCategory> BlogCategories { get; set; }
@@ -64,24 +64,72 @@ public class PortfolioProjectDbContext : DbContext
         modelBuilder.Entity<Blog>().HasData(new Blog
         {
             Id = 1,
-            Title = "Blog test",
-            Content = "Blog content",
+            Title = "Embracing the Journey: A Blend of Coding and Creativity",
+            Content = @"Welcome to my first blog post!
+                    Today, I embark on a new journey - one that intertwines my passion for coding with my love for creativity. 
+                    As a software engineer, I've always been fascinated by the way programming languages can create something out of nothing, 
+                    turning lines of code into functional and impactful applications. 
+                    But there's more to me than just my profession.
+
+                    Music: My Melodic Escape
+                    Music has always been my sanctuary. 
+                    Whether I'm strumming the guitar or getting lost in the rhythmic beats of drums, 
+                    it's where I find peace. It's not just a hobby; it's a part of who I am. 
+                    It influences how I think and solve problems. 
+                    The creativity and discipline I learn from music often spill over into my coding, 
+                    bringing a sense of rhythm and flow to my work.
+
+                    Gaming: The Virtual Odyssey
+                    I'm an avid gamer, and gaming is where I turn to when I need a break from the world. It's fascinating to see 
+                    how intricate designs and complex storylines come together to create immersive experiences. 
+                    As a developer, I draw inspiration from these virtual worlds, reminding myself of the importance of user experience and engagement.
+
+                    Fitness: Balancing the Mind and Body
+                    Maintaining a balance between the mind and body is crucial. 
+                    For me, fitness is not just about physical health but mental well-being. Hitting the gym or going for a run 
+                    clears my mind and prepares me for the challenges ahead. 
+                    It's during these moments of clarity that some of my best ideas come to life.
+
+                    The Journey Ahead
+                    As I continue on this path, I aim to bring together these diverse elements - 
+                    the logic of code, the creativity of music, the engagement of gaming, and the discipline of fitness - 
+                    to create something unique. In this blog, I'll share my experiences, challenges, and learnings in software development and beyond.
+
+                    From exploring new programming languages and technologies to delving into web development, UI/UX design, and project management, 
+                    I'll document it all here. I hope to connect with like-minded individuals, learn from this community, and grow as both a developer and a person.
+
+                    So, stay tuned, and let's embark on this journey together!",
             PostDate = DateTime.SpecifyKind(DateTime.Parse("2023-11-08"), DateTimeKind.Utc),
-            Image = "null"
+            Image = "https://res.cloudinary.com/practicaldev/image/fetch/s--VjOTp9uS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/2o2t0fyzszqheinl9x7a.png"
         });
 
         modelBuilder.Entity<BlogCategory>().HasData(new BlogCategory
         {
             Id = 1,
             BlogId = 1,
-            CategoryId = 1
+            CategoryId = 6
         });
 
-        modelBuilder.Entity<BlogInterest>().HasData(new BlogInterest
+        modelBuilder.Entity<BlogInterest>().HasData(new BlogInterest[]
         {
-            Id = 1,
-            BlogId = 1,
-            InterestId = 1
+            new BlogInterest
+            {
+                Id = 1,
+                BlogId = 1,
+                InterestId = 1
+            },
+            new BlogInterest
+            {
+                Id = 2,
+                BlogId = 1,
+                InterestId = 2
+            },
+            new BlogInterest
+            {
+                Id = 3,
+                BlogId = 1,
+                InterestId = 4
+            }
         });
 
         modelBuilder.Entity<Category>().HasData(new Category[]
@@ -104,7 +152,7 @@ public class PortfolioProjectDbContext : DbContext
 
         modelBuilder.Entity<Project>().HasData(new Project[]
         {
-            new Project 
+            new Project
             {
                 Id = 1,
                 Title = "Omni-Arena",

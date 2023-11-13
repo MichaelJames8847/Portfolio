@@ -1,0 +1,9 @@
+.blog-detail-container .blog-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.blog-categories .badge, .blog-interests .badge {
+    margin: 0 5px 5px 0;
+}

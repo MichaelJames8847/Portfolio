@@ -44,7 +44,6 @@ export function Home() {
                     <Row>
                         {technologies.map((tech, index) => (
                             <Col key={index} md={4} className="tech-item">
-                                {/* Replace with actual technology icons or names */}
                                 <p>{tech.technologyName}</p>
                             </Col>
                         ))}

@@ -252,7 +252,7 @@ namespace PortfolioProject.Migrations
             migrationBuilder.InsertData(
                 table: "Blogs",
                 columns: new[] { "Id", "CategoryId", "Content", "Image", "InterestId", "PostDate", "Title" },
-                values: new object[] { 1, null, "Blog content", "null", null, new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Utc), "Blog test" });
+                values: new object[] { 1, null, "Welcome to my first blog post!\r\n                    Today, I embark on a new journey - one that intertwines my passion for coding with my love for creativity. \r\n                    As a software engineer, I've always been fascinated by the way programming languages can create something out of nothing, \r\n                    turning lines of code into functional and impactful applications. \r\n                    But there's more to me than just my profession.\r\n\r\n                    Music: My Melodic Escape\r\n                    Music has always been my sanctuary. \r\n                    Whether I'm strumming the guitar or getting lost in the rhythmic beats of drums, \r\n                    it's where I find peace. It's not just a hobby; it's a part of who I am. \r\n                    It influences how I think and solve problems. \r\n                    The creativity and discipline I learn from music often spill over into my coding, \r\n                    bringing a sense of rhythm and flow to my work.\r\n\r\n                    Gaming: The Virtual Odyssey\r\n                    I'm an avid gamer, and gaming is where I turn to when I need a break from the world. It's fascinating to see \r\n                    how intricate designs and complex storylines come together to create immersive experiences. \r\n                    As a developer, I draw inspiration from these virtual worlds, reminding myself of the importance of user experience and engagement.\r\n\r\n                    Fitness: Balancing the Mind and Body\r\n                    Maintaining a balance between the mind and body is crucial. \r\n                    For me, fitness is not just about physical health but mental well-being. Hitting the gym or going for a run \r\n                    clears my mind and prepares me for the challenges ahead. \r\n                    It's during these moments of clarity that some of my best ideas come to life.\r\n\r\n                    The Journey Ahead\r\n                    As I continue on this path, I aim to bring together these diverse elements - \r\n                    the logic of code, the creativity of music, the engagement of gaming, and the discipline of fitness - \r\n                    to create something unique. In this blog, I'll share my experiences, challenges, and learnings in software development and beyond.\r\n\r\n                    From exploring new programming languages and technologies to delving into web development, UI/UX design, and project management, \r\n                    I'll document it all here. I hope to connect with like-minded individuals, learn from this community, and grow as both a developer and a person.\r\n\r\n                    So, stay tuned, and let's embark on this journey together!", "null", null, new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Utc), "Embracing the Journey: A Blend of Coding and Creativity" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -324,12 +324,17 @@ namespace PortfolioProject.Migrations
             migrationBuilder.InsertData(
                 table: "BlogCategories",
                 columns: new[] { "Id", "BlogId", "CategoryId" },
-                values: new object[] { 1, 1, 1 });
+                values: new object[] { 1, 1, 6 });
 
             migrationBuilder.InsertData(
                 table: "BlogInterests",
                 columns: new[] { "Id", "BlogId", "InterestId" },
-                values: new object[] { 1, 1, 1 });
+                values: new object[,]
+                {
+                    { 1, 1, 1 },
+                    { 2, 1, 2 },
+                    { 3, 1, 4 }
+                });
 
             migrationBuilder.InsertData(
                 table: "ProjectSkills",

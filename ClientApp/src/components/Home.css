@@ -6,68 +6,76 @@
 .hero-section {
   background-color: #282c34;
   color: white;
-  padding: 60px 0;
+  padding: 80px 0;
   text-align: center;
+  background-image: linear-gradient(45deg, #6c757d, #495057);
 }
 
 .hero-headshot {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  border: 3px solid white;
-  margin-bottom: 20px;
+  border: 4px solid #007bff;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 25px;
 }
 
 .hero-section p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+  font-size: 1.4rem;
+  margin-bottom: 35px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-me-section {
   background-color: #f8f9fa;
-  padding: 40px;
-  margin-top: 30px;
+  padding: 50px;
+  margin-top: 40px;
   text-align: center;
 }
 
 .about-me-section h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
 }
 
 .about-me-section p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .tech-stack {
-  padding: 40px 0;
+  padding: 50px 0;
   text-align: center;
 }
 
 .tech-stack h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
 }
 
 .tech-item {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
 }
 
 .contact-info {
   background-color: #e9ecef;
-  padding: 30px;
+  padding: 40px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info p {
-  font-size: 1.2rem;
-  margin: 10px 0;
+  font-size: 1.3rem;
+  margin: 15px 0;
 }
 
 .contact-info a {
@@ -82,10 +90,27 @@
 .btn-primary {
   background-color: #007bff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-section p {
+      font-size: 1.2rem;
+  }
+
+  .about-me-section, .tech-stack, .contact-info {
+      padding: 30px;
+  }
 }

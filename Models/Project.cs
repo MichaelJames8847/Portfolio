@@ -10,6 +10,7 @@ public class Project
     public string Link { get; set; }
     public string Image { get; set; }
     public string ProjectStatus { get; set; }
+    public string Demo { get; set; }
     public List<ProjectSkill> ProjectSkills { get; set; }
     public List<ProjectTechnology> ProjectTechnologies { get; set; }
 }

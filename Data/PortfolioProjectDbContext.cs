@@ -61,8 +61,9 @@ public class PortfolioProjectDbContext : DbContext
             Github = "https://github.com/MichaelJames8847"
         });
 
-        modelBuilder.Entity<Blog>().HasData(new Blog
+        modelBuilder.Entity<Blog>().HasData(new Blog[]
         {
+        new Blog {
             Id = 1,
             Title = "Embracing the Journey: A Blend of Coding and Creativity",
             Content = @"Welcome to my first blog post!
@@ -101,6 +102,45 @@ public class PortfolioProjectDbContext : DbContext
                     So, stay tuned, and let's embark on this journey together!",
             PostDate = DateTime.SpecifyKind(DateTime.Parse("2023-11-08"), DateTimeKind.Utc),
             Image = "https://res.cloudinary.com/practicaldev/image/fetch/s--VjOTp9uS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/2o2t0fyzszqheinl9x7a.png"
+        },
+        new Blog
+        {
+            Id = 2,
+            Title = "The Harmony of Code and Creativity: My Software Engineering Symphony",
+            Content = @"Welcome to another chapter of my journey where I blend the worlds of software engineering and creative arts. 
+            In this blog post, I dive into how my passions for music, gaming, and fitness not only shape my personal life but also enhance my professional skills as a software engineer.
+
+            The Rhythmic Patterns of Programming
+
+            In the realm of coding, I find a unique rhythm that resonates with my musical side. The process of writing code, much like composing a piece of music, requires a deep understanding of 
+            patterns, rhythms, and structures. Each line of code, like a musical note, plays a critical role in the composition of software. This analogy often guides my approach to problem-solving 
+            and designing solutions. The fluidity and creativity I harness from music empower me to write more elegant and efficient code.
+
+            Gaming: A Portal to Advanced Problem-Solving
+
+            Gaming is not just a leisure activity for me; it's a gateway to complex problem-solving and strategic thinking. Immersing in game narratives and mechanics, I draw parallels 
+            with software design, especially in user experience (UX) and user interface (UI) aspects. Understanding how games engage users helps me envision software applications that are 
+            not only functional but also enjoyable to use.
+
+            Fitness: Strengthening the Mind-Body Connection
+
+            Physical fitness plays a pivotal role in maintaining my mental agility. Regular exercise helps in decluttering my mind, often leading to moments of clarity and inspiration. 
+            The discipline and endurance I gain from fitness activities translate into my work ethic as a developer, enabling me to tackle challenging coding sessions and tight project deadlines.
+
+            Blending Interests: The Bigger Picture
+
+            My journey in software engineering is heavily influenced by my interests outside of programming. Each interest adds a unique flavor to my professional skill set. 
+            Whether it's the creativity from music, strategic thinking from gaming, or discipline from fitness, they collectively contribute to making me a well-rounded software engineer.
+
+            Looking Forward
+
+            As I continue to explore and grow in this field, I look forward to sharing insights and experiences that meld these diverse worlds. 
+            From dissecting the latest web development trends to tackling new challenges in database design, I will document my learnings and adventures here.
+
+            Join me as I navigate the intricate tapestry of software engineering, infused with the vibrancy of my personal passions. Here's to coding not just with logic, but with creativity and heart!",
+            PostDate = DateTime.SpecifyKind(DateTime.Parse("2023-11-13"), DateTimeKind.Utc),
+            Image = "https://i.redd.it/5zrpk77yach41.jpg"
+        }
         });
 
         modelBuilder.Entity<BlogCategory>().HasData(new BlogCategory
@@ -164,7 +204,8 @@ public class PortfolioProjectDbContext : DbContext
                 EndDate = DateTime.SpecifyKind(DateTime.Parse("2023-07-12"), DateTimeKind.Utc),
                 Link = "https://github.com/MichaelJames8847/Omni-Arena-Capstone.git",
                 Image = "https://i.kym-cdn.com/photos/images/newsfeed/000/993/683/3bc.jpg",
-                ProjectStatus = "Complete"
+                ProjectStatus = "Complete",
+                Demo = null
             },
 
             new Project
@@ -180,7 +221,8 @@ public class PortfolioProjectDbContext : DbContext
                 EndDate = DateTime.SpecifyKind(DateTime.Parse("2023-11-1"), DateTimeKind.Utc),
                 Link = "https://github.com/MichaelJames8847/DigitalDungeon.git",
                 Image = "https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2021/04/23044226/Gaming-Lounge-1024x554.jpg",
-                ProjectStatus = "Complete"
+                ProjectStatus = "Complete",
+                Demo = "https://www.loom.com/embed/8cefd393719347a28ee318e221b7b386?sid=fb253bdd-f47f-4078-8945-9e2ded4870f8" 
             }
         });
 

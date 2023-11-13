@@ -14,10 +14,10 @@ export default function UserProfileView() {
         <Container className="user-profile-view py-5">
             {userProfile && (
                 <Row>
-                    <Col md={4} className="text-center">
+                    <Col md={11} className="text-center">
                         <Media object src={userProfile.profilePic} alt="Profile Picture" className="profile-pic" />
                     </Col>
-                    <Col md={8}>
+                    <Col md={15}>
                         <Card className="profile-card">
                             <CardBody>
                                 <h1 className="profile-name">{`${userProfile.firstName} ${userProfile.lastName}`}</h1>

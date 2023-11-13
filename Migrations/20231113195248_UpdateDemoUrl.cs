@@ -5,28 +5,28 @@
 namespace PortfolioProject.Migrations
 {
     /// <inheritdoc />
-    public partial class BlogImageAdded : Migration
+    public partial class UpdateDemoUrl : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.UpdateData(
-                table: "Blogs",
+                table: "Projects",
                 keyColumn: "Id",
-                keyValue: 1,
-                column: "Image",
-                value: "https://res.cloudinary.com/practicaldev/image/fetch/s--VjOTp9uS--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/2o2t0fyzszqheinl9x7a.png");
+                keyValue: 2,
+                column: "Demo",
+                value: "https://www.loom.com/share/8cefd393719347a28ee318e221b7b386?sid=66e4151a-88a6-4779-97f5-70e15744e175");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.UpdateData(
-                table: "Blogs",
+                table: "Projects",
                 keyColumn: "Id",
-                keyValue: 1,
-                column: "Image",
-                value: "null");
+                keyValue: 2,
+                column: "Demo",
+                value: "https://www.loom.com/share/8cefd393719347a28ee318e221b7b386?sid=2e2266bf-d7fb-4a43-b227-3df54e75e4e2");
         }
     }
 }

@@ -1,9 +1,64 @@
+.blog-detail-container {
+    max-width: 800px; /* Set a max-width for better readability */
+    margin: auto;
+    background-color: #fff; /* Optional: for better contrast */
+    padding: 20px;
+    border-radius: 10px; /* Soften the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.blog-detail-container .card {
+    border: none; /* Remove card border */
+}
+
+.blog-detail-container .card-body {
+    padding: 20px;
+}
+
+.blog-detail-container .card-title {
+    font-size: 2.5rem; /* Larger title font */
+    color: #333; /* Darker color for better contrast */
+    margin-bottom: 15px;
+}
+
 .blog-detail-container .blog-image {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    border-radius: 5px; /* Round corners of image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for image */
+}
+
+.blog-detail-container .card-text {
+    font-size: 1.1rem; /* Slightly larger font for readability */
+    line-height: 1.6; /* Better line spacing */
+    color: #444; /* Slightly softer color than black */
+    margin-top: 20px; /* Spacing above text */
+}
+
+.blog-detail-container .text-muted {
+    font-size: 0.9rem; /* Smaller font for metadata */
 }
 
 .blog-categories .badge, .blog-interests .badge {
-    margin: 0 5px 5px 0;
+    font-size: 0.85rem; /* Adjust badge font size */
+    margin: 5px 5px 5px 0;
+    border-radius: 20px; /* Rounded badges */
+    padding: 5px 10px; /* Adjust padding */
+}
+
+/* Hover effect for badges */
+.blog-categories .badge:hover, .blog-interests .badge:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .blog-detail-container {
+        padding: 15px;
+    }
+
+    .blog-detail-container .card-title {
+        font-size: 2rem;
+    }
 }

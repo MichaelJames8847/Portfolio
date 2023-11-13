@@ -1,54 +1,79 @@
 .user-profile-view {
-    margin-top: 30px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 40px;
 }
 
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 3px solid #007bff; /* Primary color border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05);
+    border: 4px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px; /* Adjust as per the layout */
 }
 
 .profile-card {
-    background-color: #f8f9fa;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-top: -75px; /* Align with the profile image */
-    transition: box-shadow 0.3s ease;
 }
 
-.profile-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+/* Remaining CSS stays the same */
+
+
+.profile-pic:hover {
+    transform: scale(1.08); /* Slight zoom on hover */
 }
 
 .profile-name {
-    font-size: 2.5rem;
-    color: #343a40; /* Dark grey */
-    margin-bottom: 15px;
-}
-
-.profile-bio {
-    font-size: 1.2rem;
+    font-size: 2.8rem;
+    color: #343a40; /* Darker color for title */
     margin-bottom: 20px;
 }
 
+.profile-bio {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
 .profile-detail {
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
 .profile-detail a {
     color: #007bff;
     transition: color 0.3s ease;
+    text-decoration: none; /* Remove underline */
 }
 
 .profile-detail a:hover {
     color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        margin-bottom: -75px;
+    }
+
+    .profile-card {
+        padding: 30px;
+    }
+
+    .profile-name {
+        font-size: 2.5rem;
+    }
+
+    .profile-bio {
+        font-size: 1.2rem;
+    }
+
+    .profile-detail {
+        font-size: 1rem;
+    }
 }

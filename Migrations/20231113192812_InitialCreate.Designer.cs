@@ -12,8 +12,8 @@ using PortfolioProject.Data;
 namespace PortfolioProject.Migrations
 {
     [DbContext(typeof(PortfolioProjectDbContext))]
-    [Migration("20231113014528_BlogImageAdded")]
-    partial class BlogImageAdded
+    [Migration("20231113192812_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -238,6 +238,9 @@ namespace PortfolioProject.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Demo")
+                        .HasColumnType("text");
+
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
@@ -288,6 +291,7 @@ namespace PortfolioProject.Migrations
                         new
                         {
                             Id = 2,
+                            Demo = "https://www.loom.com/share/8cefd393719347a28ee318e221b7b386?sid=2e2266bf-d7fb-4a43-b227-3df54e75e4e2",
                             Description = "DigitalDungeon is a platform where gamers can \r\n                come to find out their gaming adventure! Just register, select your\r\n                prefered genres and preferences, and watch the magic unfurl\r\n                as some of the most popular games in history are recommended for your\r\n                pleasure!",
                             EndDate = new DateTime(2023, 11, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Image = "https://offloadmedia.feverup.com/secretchicago.com/wp-content/uploads/2021/04/23044226/Gaming-Lounge-1024x554.jpg",

@@ -49,4 +49,12 @@ public class BlogController : ControllerBase
 
             return Ok(blog);
     }
+
+    [HttpPost("create")]
+    public IActionResult CreateBlog(Blog blog)
+    {
+        _dbContext.Blogs.Add(blog);
+        _dbContext.SaveChanges();
+        return Created($"/api/blog/{blog.Id}", blog);
+    }
 }

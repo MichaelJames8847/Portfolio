@@ -5,7 +5,6 @@ using PortfolioProject.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddDbContext<PortfolioProjectDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -31,6 +30,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseMiddleware<TokenAuthenticationMiddleware>();
+
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

@@ -3,6 +3,7 @@ import Blogs from "./blog/Blog";
 import { Home } from "./components/Home";
 import UserProfileView from "./user/UserProfile";
 import BlogDetail from "./blog/BlogDetail";
+import CreateBlog from "./blog/CreateBlog";
 
 const AppRoutes = [
   {
@@ -20,6 +21,10 @@ const AppRoutes = [
   {
     path: '/blog/:id',
     element: <BlogDetail />
+  },
+  {
+    path: '/blog/create',
+    element: <CreateBlog />
   },
   {
     path: '/project',

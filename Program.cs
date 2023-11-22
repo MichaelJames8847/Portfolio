@@ -32,8 +32,6 @@ app.UseRouting();
 
 app.UseMiddleware<TokenAuthenticationMiddleware>();
 
-app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
